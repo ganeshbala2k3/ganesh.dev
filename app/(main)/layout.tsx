@@ -3,6 +3,8 @@ import DarkVeil from '@/components/DarkVeil';
 import ClientScrollHandler from '@/components/ClientScrollHandler';
 import HomeSection from '@/components/sections/HomeSection';
 import AboutSection from '@/components/sections/AboutSection';
+import { DemoOne } from '@/components/sections/ContactUs';
+import CertificationsSection from '@/components/sections/CertificationsSection';
 
 export default function MainLayout({
     children,
@@ -29,11 +31,19 @@ export default function MainLayout({
             ]
         },
         {
+            label: "Certifications",
+            bgColor: "#17122A",
+            textColor: "#fff",
+            links: [
+                { label: "Credentials", href: "/certifications", ariaLabel: "My Certifications" }
+            ]
+        },
+        {
             label: "Contact",
             bgColor: "#271E37",
             textColor: "#fff",
             links: [
-                { label: "Email", href: "mailto:test@example.com", ariaLabel: "Email us" },
+                { label: "Contact Form", href: "/contact", ariaLabel: "Contact Form" },
                 { label: "Twitter", href: "https://twitter.com", ariaLabel: "Twitter" },
                 { label: "LinkedIn", href: "https://linkedin.com", ariaLabel: "LinkedIn" }
             ]
@@ -72,6 +82,12 @@ export default function MainLayout({
 
                 <div id="about" className="w-full min-h-screen">
                     <AboutSection />
+                </div>
+                <div id="certifications" className="w-full min-h-screen">
+                    <CertificationsSection />
+                </div>
+                <div id="contact" className="w-full min-h-screen">
+                    <DemoOne />
                 </div>
 
                 {/* routing container */}

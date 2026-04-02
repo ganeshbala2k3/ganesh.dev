@@ -19,7 +19,7 @@ export default function HomeSection({ mounted }: { mounted: boolean }) {
         <div className={`relative z-10 flex flex-col items-center justify-center container mx-auto px-6 pt-32 pb-24 w-full max-w-6xl gap-16 transition-all duration-1000 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
             <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
                 <div className="w-full lg:w-5/12 flex justify-center lg:justify-end relative z-20 group">
-                    <div className="w-full max-w-[340px] sm:max-w-[360px] lg:max-w-[400px] xl:max-w-[420px] drop-shadow-[0_0_40px_rgba(113,196,255,0.15)] transition-all duration-500 hover:drop-shadow-[0_0_60px_rgba(113,196,255,0.3)]">
+                    <div className="w-full max-w-[280px] sm:max-w-[340px] md:max-w-[360px] lg:max-w-[400px] xl:max-w-[420px] drop-shadow-[0_0_40px_rgba(113,196,255,0.15)] transition-all duration-500 hover:drop-shadow-[0_0_60px_rgba(113,196,255,0.3)]">
                         <ProfileCard
                             name="Ganesh Bala"
                             title="Software Engineer"
@@ -30,7 +30,14 @@ export default function HomeSection({ mounted }: { mounted: boolean }) {
                             showUserInfo={true}
                             enableTilt={false}
                             enableMobileTilt={false}
-                            onContactClick={() => window.location.href = "mailto:[ganeshbala2k3@gmail.com]"}
+                            onContactClick={() => {
+                                const el = document.getElementById('contact');
+                                if (el) {
+                                    el.scrollIntoView({ behavior: 'smooth' });
+                                } else {
+                                    window.location.href = '/contact';
+                                }
+                            }}
                             behindGlowColor=""
                             behindGlowEnabled={false}
                             innerGradient="linear-gradient(135deg, rgba(30,30,45,0.8) 0%, rgba(10,10,15,0.9) 100%)"

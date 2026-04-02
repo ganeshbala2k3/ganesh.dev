@@ -10,7 +10,7 @@ export default function ClientScrollHandler() {
         if (!isManualScroll.current) {
             let id = pathname === '/' ? 'home' : pathname.replace('/', '');
             // default to home if section not expected
-            if (!['home', 'about', 'projects', 'contact', 'careers', 'case-studies'].includes(id)) {
+            if (!['home', 'about', 'projects', 'certifications', 'contact', 'careers', 'case-studies'].includes(id)) {
                 id = 'home';
             }
             const el = document.getElementById(id);
@@ -23,7 +23,7 @@ export default function ClientScrollHandler() {
 
     useEffect(() => {
         const handleScroll = () => {
-            const sections = ['home', 'about', 'projects', 'contact'];
+            const sections = ['home', 'about', 'projects', 'certifications', 'contact'];
             let currentSection = '';
             for (const section of sections) {
                 const el = document.getElementById(section);

@@ -445,7 +445,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   return (
     <div
       ref={wrapRef}
-      className={`relative touch-none ${className}`.trim()}
+      className={`relative ${className}`.trim()}
       style={{ perspective: '500px', transform: 'translate3d(0, 0, 0.1px)', ...cardStyle } as React.CSSProperties}
     >
       {behindGlowEnabled && (
@@ -548,7 +548,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                 >
                   <div className="flex items-center gap-2 sm:gap-3">
                     <div
-                      className="rounded-full overflow-hidden border border-white/10 flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12"
+                      className="hidden sm:block rounded-full overflow-hidden border border-white/10 flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12"
                     >
                       <img
                         className="w-full h-full object-cover rounded-full"
