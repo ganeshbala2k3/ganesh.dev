@@ -11,6 +11,7 @@ type ProfileCardProps = {
   tags?: string[]
   isVerified?: boolean
   followers?: number
+  pdfUrl?: string
 }
 
 export default function ProfileCardGrid() {
@@ -22,6 +23,7 @@ export default function ProfileCardGrid() {
       avatar: "aws.svg",
       tags: ["Cloud", "Fundamental"],
       isVerified: true,
+      pdfUrl: "/awscertificate.pdf"
     },
     {
       name: "Google TensorFlow",
@@ -30,6 +32,7 @@ export default function ProfileCardGrid() {
       avatar: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg",
       tags: ["AI/ML", "Developer"],
       isVerified: true,
+      pdfUrl: "/tensorflow.pdf"
     },
     {
       name: "IoT Level 1",
@@ -38,6 +41,7 @@ export default function ProfileCardGrid() {
       avatar: "https://cdn-icons-png.flaticon.com/512/1329/1329016.png",
       tags: ["Hardware", "IoT"],
       isVerified: true,
+      pdfUrl: "/tessolve.pdf"
     }
   ]
 
@@ -83,7 +87,7 @@ export default function ProfileCardGrid() {
   )
 }
 
-function ProfileCard({ name, role, status, avatar, tags = [], isVerified, followers }: ProfileCardProps) {
+function ProfileCard({ name, role, status, avatar, tags = [], isVerified, followers, pdfUrl }: ProfileCardProps) {
   return (
     <div className="group relative overflow-hidden rounded-3xl bg-[#111] border border-white/10 dark:bg-gray-800 p-5 sm:p-6 w-full max-w-[280px] sm:max-w-[320px] shadow-[12px_12px_24px_rgba(0,0,0,0.4),-12px_-12px_24px_rgba(255,255,255,0.02)] transition-all duration-500 hover:shadow-[20px_20px_40px_rgba(168,85,247,0.15),-20px_-20px_40px_rgba(255,255,255,0.05)] hover:scale-[1.02] hover:-translate-y-2 pointer-events-auto flex flex-col h-full">
       {/* Status indicator with pulse animation */}
@@ -165,13 +169,14 @@ function ProfileCard({ name, role, status, avatar, tags = [], isVerified, follow
 
       {/* Action Buttons with enhanced hover effects */}
       <div className="mt-6 flex gap-3 relative z-10">
-        <button className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-white/5 border border-white/10 py-3 text-sm font-medium text-white shadow-[2px_2px_8px_rgba(0,0,0,0.2)] transition-all duration-300 hover:scale-95 active:scale-90 group-hover:bg-purple-600 group-hover:border-purple-500">
+        <button
+          onClick={() => pdfUrl && window.open(pdfUrl, '_blank')}
+          className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-white/5 border border-white/10 py-3 text-sm font-medium text-white shadow-[2px_2px_8px_rgba(0,0,0,0.2)] transition-all duration-300 hover:scale-95 active:scale-90 group-hover:bg-purple-600 group-hover:border-purple-500"
+        >
           <Award className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
           <span>View</span>
         </button>
-        <button className="flex items-center justify-center rounded-xl bg-white/5 border border-white/10 p-3 text-white shadow-[2px_2px_8px_rgba(0,0,0,0.2)] transition-all duration-300 hover:scale-95 active:scale-90 group-hover:bg-white/15">
-          <ExternalLink className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
-        </button>
+
       </div>
 
       {/* Animated border on hover */}

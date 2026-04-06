@@ -75,7 +75,15 @@ export default function HomeSection({ mounted }: { mounted: boolean }) {
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center lg:justify-start">
-                        <button className="px-8 py-3.5 rounded-xl bg-white text-black font-bold tracking-wide transition-all duration-300 hover:scale-105 hover:bg-gray-200 shadow-[0_0_20px_rgba(255,255,255,0.25)] flex items-center justify-center">
+                        <button
+                            onClick={() => {
+                                const el = document.getElementById('projects');
+                                if (el) {
+                                    el.scrollIntoView({ behavior: 'smooth' });
+                                }
+                            }}
+                            className="px-8 py-3.5 rounded-xl bg-white text-black font-bold tracking-wide transition-all duration-300 hover:scale-105 hover:bg-gray-200 shadow-[0_0_20px_rgba(255,255,255,0.25)] flex items-center justify-center"
+                        >
                             View My Projects
                         </button>
                         <button

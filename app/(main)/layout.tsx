@@ -5,6 +5,9 @@ import HomeSection from '@/components/sections/HomeSection';
 import AboutSection from '@/components/sections/AboutSection';
 import { DemoOne } from '@/components/sections/ContactUs';
 import CertificationsSection from '@/components/sections/CertificationsSection';
+import Timeline from '@/components/sections/Timeline';
+import SkillSection from '@/components/sections/skillsection';
+import ProjectsSection from '@/components/sections/ProjectsSection';
 
 export default function MainLayout({
     children,
@@ -13,12 +16,22 @@ export default function MainLayout({
 }) {
     const items = [
         {
-            label: "About",
+            label: "Info",
             bgColor: "#0D0716",
             textColor: "#fff",
             links: [
-                { label: "Company", href: "/about", ariaLabel: "About Company" },
-                { label: "Careers", href: "/careers", ariaLabel: "About Careers" }
+                { label: "Home", href: "#home", ariaLabel: "Home Section" },
+                { label: "About Me", href: "#about", ariaLabel: "About Section" },
+                { label: "My Journey", href: "#timeline", ariaLabel: "Timeline Section" }
+            ]
+        },
+        {
+            label: "Expertise",
+            bgColor: "#120920",
+            textColor: "#fff",
+            links: [
+                { label: "My Toolkit", href: "#skills", ariaLabel: "Skills Section" },
+                { label: "Certifications", href: "#certifications", ariaLabel: "Certifications Section" }
             ]
         },
         {
@@ -26,26 +39,20 @@ export default function MainLayout({
             bgColor: "#170D27",
             textColor: "#fff",
             links: [
-                { label: "Featured", href: "/projects", ariaLabel: "Featured Projects" },
-                { label: "Case Studies", href: "/case-studies", ariaLabel: "Project Case Studies" }
+                { label: "All Projects", href: "#projects", ariaLabel: "Projects Section" },
+                { label: "Inventory System", href: "#inventory", ariaLabel: "Inventory Management Project" },
+                { label: "Blockchain Ticketing", href: "#blockchain", ariaLabel: "Blockchain Project" },
+                { label: "GitHub Profile", href: "https://github.com/ganeshbala2k3", ariaLabel: "GitHub" }
             ]
         },
         {
-            label: "Certifications",
-            bgColor: "#17122A",
-            textColor: "#fff",
-            links: [
-                { label: "Credentials", href: "/certifications", ariaLabel: "My Certifications" }
-            ]
-        },
-        {
-            label: "Contact",
+            label: "Connect",
             bgColor: "#271E37",
             textColor: "#fff",
             links: [
-                { label: "Contact Form", href: "/contact", ariaLabel: "Contact Form" },
-                { label: "Twitter", href: "https://twitter.com", ariaLabel: "Twitter" },
-                { label: "LinkedIn", href: "https://linkedin.com", ariaLabel: "LinkedIn" }
+                { label: "Contact Form", href: "#contact", ariaLabel: "Contact Section" },
+                { label: "LinkedIn", href: "https://linkedin.com", ariaLabel: "LinkedIn" },
+                { label: "Twitter", href: "https://twitter.com", ariaLabel: "Twitter" }
             ]
         }
     ];
@@ -83,12 +90,25 @@ export default function MainLayout({
                 <div id="about" className="w-full min-h-screen">
                     <AboutSection />
                 </div>
+
+                <div id="timeline" className="w-full min-h-screen">
+                    <Timeline />
+                </div>
+                <div id="skills" className="w-full min-h-screen">
+                    <SkillSection />
+                </div>
+
+                <div id="projects" className="w-full min-h-screen">
+                    <ProjectsSection />
+                </div>
+
                 <div id="certifications" className="w-full min-h-screen">
                     <CertificationsSection />
                 </div>
                 <div id="contact" className="w-full min-h-screen">
                     <DemoOne />
                 </div>
+
 
                 {/* routing container */}
                 <div className="hidden">

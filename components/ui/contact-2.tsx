@@ -18,7 +18,7 @@ export const Contact2 = ({
   description = "We are available for questions, feedback, or collaboration opportunities. Let us know how we can help!",
   phone = "(123) 34567890",
   email = "email@example.com",
-  web = { label: "shadcnblocks.com", url: "https://shadcnblocks.com" },
+
 }: Contact2Props) => {
   return (
     <section className="py-32">
@@ -46,12 +46,7 @@ export const Contact2 = ({
                     {email}
                   </a>
                 </li>
-                <li>
-                  <span className="font-bold">Web: </span>
-                  <a href={web.url} target="_blank" className="underline">
-                    {web.label}
-                  </a>
-                </li>
+                
               </ul>
             </div>
           </div>
@@ -78,7 +73,7 @@ export const Contact2 = ({
               <Label htmlFor="message">Message</Label>
               <Textarea placeholder="Type your message here." id="message" />
             </div>
-            <Button className="w-full">Send Message</Button>
+            <Button className="w-full bg-white text-black">Send Message</Button>
           </div>
         </div>
       </div>

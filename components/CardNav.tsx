@@ -4,6 +4,7 @@ import { gsap } from 'gsap';
 import Link from 'next/link';
 // use your own icon import if react-icons is not available
 import { GoArrowUpRight } from 'react-icons/go';
+import SplitText from './SplitText';
 
 type CardNavLink = {
   label: string;
@@ -185,18 +186,33 @@ const CardNav: React.FC<CardNavProps> = ({
             />
           </div>
 
-          {logo && (
-            <div className="logo-container flex items-center md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 order-1 md:order-none">
+          <div className="logo-container flex items-center md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 order-1 md:order-none">
+            {logo ? (
               <img src={logo} alt={logoAlt} className="logo h-[28px]" />
-            </div>
-          )}
+            ) : (
+              <SplitText
+                text="Welcome"
+                className="text-2xl font-semibold text-center text-white"
+                delay={50}
+                duration={1.25}
+                ease="power3.out"
+                splitType="chars"
+                from={{ opacity: 0, y: 40 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                rootMargin="-100px"
+                textAlign="center"
+                onLetterAnimationComplete={() => console.log('All letters have animated!')}
+              />
+            )}
+          </div>
 
-          <button
+          <button onClick={() => window.location.href = '/contact'}
             type="button"
             className="card-nav-cta-button hidden md:inline-flex border-0 rounded-[calc(0.75rem-0.2rem)] px-4 items-center h-full font-medium cursor-pointer transition-colors duration-300"
             style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
           >
-            Get Started
+            Contact Me
           </button>
         </div>
 
@@ -205,7 +221,7 @@ const CardNav: React.FC<CardNavProps> = ({
             } md:flex-row md:items-end md:gap-[12px]`}
           aria-hidden={!isExpanded}
         >
-          {(items || []).slice(0, 3).map((item, idx) => (
+          {(items || []).map((item, idx) => (
             <div
               key={`${item.label}-${idx}`}
               className="nav-card select-none relative flex flex-col gap-2 p-[12px_16px] rounded-[calc(0.75rem-0.2rem)] min-w-0 flex-[1_1_auto] h-auto min-h-[60px] md:h-full md:min-h-0 md:flex-[1_1_0%]"
