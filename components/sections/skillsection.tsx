@@ -42,7 +42,7 @@ const skillCategories = [
             { name: "Docker", image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
             { name: "Jenkins", image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" },
             { name: "Linux", image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" },
-            { name: "Computer Networks", image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/network-attached-storage/network-attached-storage-original.svg" }
+            { name: "Computer Networks", image: "https://www.svgrepo.com/show/447216/admin-site.svg" }
         ]
     },
     {

@@ -67,7 +67,7 @@ export default function AboutSection() {
                         </div>
 
                         <div className="flex flex-wrap gap-4 mt-auto pt-6">
-                            <a href="mailto:[ganeshbala2k3@gmail.com]" className="px-6 py-3 rounded-xl bg-white text-black font-bold tracking-wide transition-all duration-300 hover:scale-105 hover:bg-gray-200 shadow-[0_0_20px_rgba(255,255,255,0.25)]">
+                            <a href="https://wa.me/+916303543881" target="_blank" className="px-6 py-3 rounded-xl bg-white text-black font-bold tracking-wide transition-all duration-300 hover:scale-105 hover:bg-gray-200 shadow-[0_0_20px_rgba(255,255,255,0.25)]">
                                 Let's Talk
                             </a>
                             <button onClick={() => window.open('/GaneshResume.pdf', '_blank')} className="px-6 py-3 rounded-xl border border-white/20 bg-white/5 text-white font-semibold transition-all duration-300 hover:bg-white/10 hover:border-white/40">
