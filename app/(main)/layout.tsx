@@ -39,7 +39,7 @@ export default function MainLayout({
             bgColor: "#170D27",
             textColor: "#fff",
             links: [
-                { label: "All Projects", href: "#projects", ariaLabel: "Projects Section" },
+                { label: "All Projects", href: "/projects", ariaLabel: "Projects Section" },
                 { label: "GitHub Profile", href: "https://github.com/ganeshbala2k3", ariaLabel: "GitHub" }
             ]
         },
@@ -48,7 +48,7 @@ export default function MainLayout({
             bgColor: "#271E37",
             textColor: "#fff",
             links: [
-                { label: "Contact Form", href: "#contact", ariaLabel: "Contact Section" },
+                { label: "Contact Form", href: "/contact", ariaLabel: "Contact Section" },
                 { label: "LinkedIn", href: "https://www.linkedin.com/in/ganesh-bala-9b4a8b1b9/", ariaLabel: "LinkedIn" },
             ]
         }
