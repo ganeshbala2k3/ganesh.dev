@@ -13,22 +13,32 @@ type Project = {
 };
 
 const projects: Project[] = [
+      {
+        id: "generative AI",
+        title: "Adaptive LLM Orchestration with Prompt Refinement for Cost-Efficient and Reliable AI Systems",
+        description:
+            "Adaptive LLM Orchestration System – Built a cost-efficient AI pipeline with query analysis, prompt refinement, model routing, and RAG to optimize response quality, latency, and reduce hallucination.",
+        tags: ["Blockchain", "Solidity", "Node.js", "Distributed Ledger", "Privacy"],
+        githubUrl: "https://github.com/ganeshbala2k3/LLM_Orchestration",
+        liveUrl: "#", // User mentioned a publication link below
+        badge: "Building in Progress",
+    },
     {
         id: "inventory",
         title: "Inventory Management System",
         description:
             "A real-time SaaS application for Bapatla Engineering College to streamline and digitize stock management, significantly reducing manual record-keeping and human effort. Built with RBAC for secure, role-based operations.",
         tags: ["React.js", "Node.js", "MySQL", "Ant Design", "Express.js", "RBAC"],
-        githubUrl: "https://github.com/ganeshbala2k3",
+        githubUrl: "https://github.com/ganeshbala2k3/electrical_inventory",
         badge: "Real-World SaaS",
-    },
-    {
+    },{
+   
         id: "blockchain",
         title: "Blockchain Event Ticketing",
         description:
             "A blockchain-based ticketing system that securely stores event and ticket data on a distributed ledger, enabling authenticity verification and enhancing transparency. Reforming the secure event management ecosystem.",
         tags: ["Blockchain", "Solidity", "Node.js", "Distributed Ledger", "Privacy"],
-        githubUrl: "https://github.com/ganeshbala2k3",
+        githubUrl: "https://github.com/ganeshbala2k3/web3.O",
         liveUrl: "#", // User mentioned a publication link below
         badge: "Research Publication",
     }
